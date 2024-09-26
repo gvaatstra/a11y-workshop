@@ -1,0 +1,19 @@
+{
+  "name": "a11y-workshop",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gvaatstra/a11y-workshop.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gvaatstra/a11y-workshop/issues"
+  },
+  "homepage": "https://github.com/gvaatstra/a11y-workshop#readme"
+}

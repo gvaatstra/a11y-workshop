@@ -1,0 +1,29 @@
+{
+  "name": "playwright-accessibility",
+  "version": "1.0.0",
+  "description": "Accessibility tooling in combination with Playwright",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx playwright test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gvaatstra/a11y-workshop.git"
+  },
+  "keywords": [
+    "accessibility",
+    "axe",
+    "a11y"
+  ],
+  "author": "Gerwin Vaatstra",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gvaatstra/a11y-workshop/issues"
+  },
+  "homepage": "https://github.com/gvaatstra/a11y-workshop#readme",
+  "devDependencies": {
+    "@axe-core/playwright": "^4.10.0",
+    "@playwright/test": "^1.47.2",
+    "@types/node": "^22.7.3"
+  }
+}
