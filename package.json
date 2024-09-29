@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/gvaatstra/a11y-workshop/issues"
   },
-  "homepage": "https://github.com/gvaatstra/a11y-workshop#readme"
+  "homepage": "https://github.com/gvaatstra/a11y-workshop#readme",
+  "devDependencies": {
+    "accessibility-checker": "^3.1.75"
+  }
 }

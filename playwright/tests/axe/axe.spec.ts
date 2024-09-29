@@ -5,24 +5,33 @@ test.describe('axe', () => {
     await page.goto('');
     const accessibilityScanResults = await axeBuilder.analyze();
 
-    addAnnotations(accessibilityScanResults);
-    // expect(accessibilityScanResults.violations).toEqual([]);
+    addAnnotationsToPlaywrightReport(accessibilityScanResults);
+    logResultsToConsole(accessibilityScanResults);
   });
 });
 
 
-function addAnnotations(data: AxeResults) {
+function addAnnotationsToPlaywrightReport(data: AxeResults) {
+    test.info().annotations.push(...getViolations(data));
+}
+
+function logResultsToConsole(data: AxeResults) {
+    console.table(getViolations(data));
+}
+function getViolations(data: AxeResults) {
+    const results: {type: string, description: string}[] = [];
     for(let i=0; i<data.violations.length; i++) {
-        test.info().annotations.push({
+        results.push({
             type: `Axe violation ${i}`,
             description: data.violations[i].description,
         });
         for(let j=0; j<data.violations[i].nodes.length; j++) {
-            test.info().annotations.push({
+            results.push({
                 type: `Axe violation ${i} - HTML`,
                 description: data.violations[i].nodes[j].target.toString()
             });
         }
     }
+    return results;
 }
 
