@@ -5,7 +5,7 @@ test.describe('IBM equal access', async () => {
     const aChecker = require("accessibility-checker");
 
 
-    test('should give you some hints where to look', async ({ page }) => {
+    test('IBM - should give you some hints where to look', async ({ page }) => {
 
         const testlabel = 'IBM EA - no baseline';
         await page.goto('');
@@ -13,11 +13,17 @@ test.describe('IBM equal access', async () => {
 
     });
 
-    test('should succeed as it meets the terrible baseline', async ({ page }) => {
+    test('IBM - should succeed as it meets the terrible baseline', async ({ page }) => {
         const testlabel = 'IBM EA - terrible baseline';
         await page.goto('');
         await getCompliance(page, testlabel);
         //Not sure why it doesn't match the baseline, but it should.
+    });
+
+    test('IBM - Should show you x amount of violations on the after page', async ({ page }) => {
+        const testlabel = 'IBM EA - After page Bootstrap';
+        await page.goto('https://a11y-assessments.pages.oit.duke.edu/accessible-u/after_u.html');
+        await getCompliance(page, testlabel);
     });
 
     async function getCompliance(page: Page, testlabel: string) {

@@ -35,3 +35,16 @@ Go to the `sites` folder and and go to one of the sites, then run the following 
 npx live-server
 ```
 
+## Running tests
+There are various ways to run tests:
+
+### Playwright
+To run the tests with playwright, you can go to the `playwright` folder and run the following commands to run all tests, or a specific test:
+```bash
+cd playwright
+npx playwright test
+npx playwright test --grep "some part of the test name"
+npx playwright test tests/axe/axe.spec.ts
+```
+
+

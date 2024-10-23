@@ -1,13 +1,21 @@
 import { test, expect } from '../../fixtures/fixtures';
 import { AxeResults } from 'axe-core';
 test.describe('axe', () => {
-  test('should give you some hints where to look', async ({ page, axeBuilder }) => {
+  test('Axe - should give you some hints where to look on the before page', async ({ page, axeBuilder }) => {
     await page.goto('');
     const accessibilityScanResults = await axeBuilder.analyze();
 
     addAnnotationsToPlaywrightReport(accessibilityScanResults);
     logResultsToConsole(accessibilityScanResults);
   });
+
+  test('Axe - Should show you x amount of violations on the after page', async ({ page, axeBuilder }) => {
+    await page.goto('https://a11y-assessments.pages.oit.duke.edu/accessible-u/after_u.html');
+    await page.waitForTimeout(2000);
+    const accessibilityScanResults = await axeBuilder.analyze();
+
+    addAnnotationsToPlaywrightReport(accessibilityScanResults);
+    logResultsToConsole(accessibilityScanResults);});
 });
 
 

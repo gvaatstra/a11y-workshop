@@ -1,6 +1,5 @@
 # Playwright Accessibility Testing
 
-
 ## Install playwright and dependencies
 
 ```bash
