@@ -13,7 +13,7 @@ git submodule update --init --recursive
 ```
 
 ## Install
-First in the root of the repo run the following command to install the dependencies:
+First in the root of the repo run the following command to install the dependencies. This also installs Cypress:
 ```bash
 npm install
 ```
@@ -39,7 +39,7 @@ npx live-server
 There are various ways to run tests:
 
 ### Playwright
-To run the tests with playwright, you can go to the `playwright` folder and run the following commands to run all tests, or a specific test:
+To run the tests with Playwright, you can go to the `playwright` folder and run the following commands to run all tests, or a specific test:
 ```bash
 cd playwright
 npx playwright test
@@ -47,4 +47,12 @@ npx playwright test --grep "some part of the test name"
 npx playwright test tests/axe/axe.spec.ts
 ```
 
+### Cypress
+To run the tests with Cypress, you can go to the `cypress` folder and run the following commands to open the UI to run tests
+```
+cd cypress
+npx cypress open
+```
 
+## Resources
+[Wick-A11Y (Cypress)](https://github.com/sclavijosuero/wick-a11y)
